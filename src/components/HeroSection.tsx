@@ -4,9 +4,12 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-end px-4 pb-24 overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/50 via-black to-black" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-white/5 to-transparent blur-3xl" />
-        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black to-transparent" />
+        <img
+          src="/images/hero-bg.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
       </div>
 
       <div className="relative z-10 text-center max-w-3xl">
