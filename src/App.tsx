@@ -8,6 +8,7 @@ import ContactForm from "./components/ContactForm";
 import SocialLinks from "./components/SocialLinks";
 import Footer from "./components/Footer";
 import AdminPanel from "./components/AdminPanel";
+import Starfield from "./components/Starfield";
 
 export default function App() {
   const [view, setView] = useState<"portfolio" | "admin">("portfolio");
@@ -22,8 +23,9 @@ export default function App() {
 
   return (
     <>
+      <Starfield />
       <Navbar onAdminClick={() => setView("admin")} />
-      <main>
+      <main className="relative z-10">
         <HeroSection />
         <AboutSection />
         <PortfolioGrid />
