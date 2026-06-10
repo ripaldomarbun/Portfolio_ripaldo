@@ -32,6 +32,38 @@ export const projects: Project[] = [
     tech: ["Web Development", "CMS", "Public Relations", "Content Management"],
     demoUrl: "https://rutanbatam.id",
   },
+  {
+    id: "4",
+    title: "Dimsum App",
+    description:
+      "Restaurant POS System — Dimsum Mentai. Sistem point of sale untuk restoran dimsum mentai.",
+    tech: ["PHP", "Web Development", "Database Management"],
+    githubUrl: "https://github.com/ripaldomarbun/dimsum-app",
+  },
+  {
+    id: "5",
+    title: "Keuangan Grabike",
+    description:
+      "Sistem manajemen keuangan untuk aplikasi Grabike.",
+    tech: ["JavaScript", "Web Development"],
+    githubUrl: "https://github.com/ripaldomarbun/keuangan-grabike",
+  },
+  {
+    id: "6",
+    title: "Rutan Kelas IIA Batam",
+    description:
+      "Sistem informasi untuk Rumah Tahanan Negara Kelas IIA Batam — pengelolaan data dan layanan.",
+    tech: ["PHP", "Web Development", "Database Management"],
+    githubUrl: "https://github.com/ripaldomarbun/rutan-kelas-iia-batam",
+  },
+  {
+    id: "7",
+    title: "Todo List PHP",
+    description:
+      "Aplikasi Todo List sederhana menggunakan PHP untuk manajemen tugas harian.",
+    tech: ["PHP", "Web Development", "Database Management"],
+    githubUrl: "https://github.com/ripaldomarbun/todo-list-php",
+  },
 ];
 
 export interface PersonalInfo {
@@ -66,7 +98,7 @@ Experience
   phone: "+62 822-3593-6214",
   location: "Batam, Indonesia",
   social: {
-    github: "",
+    github: "https://github.com/ripaldomarbun",
     linkedin: "",
   },
   skills: [
