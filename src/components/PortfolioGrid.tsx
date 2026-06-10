@@ -6,8 +6,12 @@ export default function PortfolioGrid() {
   const projects = getProjects();
 
   return (
-    <section id="portfolio" className="snap-start min-h-screen flex items-center px-4 relative bg-black">
-      <div className="max-w-6xl mx-auto w-full">
+    <section id="portfolio" className="snap-start min-h-screen flex items-center px-4 relative bg-black overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img src="/images/portfolio-bg.jpg" alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
+      </div>
+      <div className="relative z-10 max-w-6xl mx-auto w-full">
         <ScrollReveal>
           <h2 className="text-3xl sm:text-4xl font-bold text-white uppercase tracking-wide mb-2">
             Portfolio
