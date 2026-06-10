@@ -23,6 +23,7 @@ export const projects: Project[] = [
     description:
       "Pengelolaan website institusi resmi rutanbatam.id dan sistem informasi untuk Rumah Tahanan Negara Kelas IIA Batam.",
     tech: ["PHP", "Web Development", "CMS", "Public Relations"],
+    demoUrl: "https://rutanbatam.id",
     githubUrl: "https://github.com/ripaldomarbun/rutan-kelas-iia-batam",
   },
   {
