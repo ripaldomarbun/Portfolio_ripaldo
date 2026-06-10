@@ -54,8 +54,13 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+      <div className="mb-6 p-4 rounded bg-primary/[0.03] border border-primary/10 dark:border-primary/20">
+        <p className="text-sm text-primary-dark dark:text-primary-light/80">
+          Isi form di bawah untuk menghubungi saya.
+        </p>
+      </div>
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+        <label htmlFor="name" className="block text-sm font-medium text-primary-dark dark:text-primary-light mb-1">
           Nama
         </label>
         <input
@@ -68,7 +73,7 @@ export default function ContactForm() {
         />
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+        <label htmlFor="email" className="block text-sm font-medium text-primary-dark dark:text-primary-light mb-1">
           Email
         </label>
         <input
@@ -81,7 +86,7 @@ export default function ContactForm() {
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+        <label htmlFor="message" className="block text-sm font-medium text-primary-dark dark:text-primary-light mb-1">
           Pesan
         </label>
         <textarea
@@ -94,7 +99,7 @@ export default function ContactForm() {
         />
       </div>
       {status === "error" && (
-        <p className="text-primary text-sm">{errorMsg}</p>
+        <p className="text-primary-dark dark:text-primary-light text-sm">{errorMsg}</p>
       )}
       <button
         type="submit"

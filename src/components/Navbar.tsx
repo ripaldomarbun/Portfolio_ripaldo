@@ -57,7 +57,7 @@ export default function Navbar({ onAdminClick }: Props) {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -65,7 +65,7 @@ export default function Navbar({ onAdminClick }: Props) {
             {onAdminClick && (
               <button
                 onClick={onAdminClick}
-                className="text-sm text-primary hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="text-sm text-primary-dark dark:text-primary-light hover:text-primary dark:hover:text-primary transition-colors font-medium"
               >
                 Admin
               </button>
@@ -81,7 +81,7 @@ export default function Navbar({ onAdminClick }: Props) {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="block text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
             >
               {link.label}
             </a>
@@ -89,7 +89,7 @@ export default function Navbar({ onAdminClick }: Props) {
           {onAdminClick && (
             <button
               onClick={() => { setOpen(false); onAdminClick(); }}
-              className="block text-sm text-primary hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="block text-sm text-primary-dark dark:text-primary-light hover:text-primary dark:hover:text-primary transition-colors font-medium"
             >
               Admin
             </button>

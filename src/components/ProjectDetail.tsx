@@ -24,7 +24,7 @@ export default function ProjectDetail({ project, onClose }: Props) {
         className="bg-white dark:bg-gray-900 rounded max-w-lg w-full p-6 sm:p-8 border border-gray-300 dark:border-gray-700"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex items-start justify-between mb-4 pb-3 border-b border-surface-accent dark:border-primary/30">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
             {project.title}
           </h2>
@@ -48,10 +48,14 @@ export default function ProjectDetail({ project, onClose }: Props) {
         <p className="text-gray-500 dark:text-gray-400 leading-relaxed">{project.description}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          {project.tech.map((t) => (
+          {project.tech.map((t, i) => (
             <span
               key={t}
-              className="px-2.5 py-1 text-xs font-medium rounded bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
+              className={`px-2.5 py-1 text-xs font-medium rounded ${
+                i % 2 === 0
+                  ? "bg-primary/10 text-primary-dark"
+                  : "bg-surface-accent/40 text-gray-700 dark:text-gray-300"
+              }`}
             >
               {t}
             </span>
@@ -74,7 +78,7 @@ export default function ProjectDetail({ project, onClose }: Props) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center px-4 py-2.5 rounded bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+              className="flex-1 text-center px-4 py-2.5 rounded bg-surface-accent text-gray-900 font-semibold text-sm hover:bg-[#ddd89a] transition-colors"
             >
               GitHub
             </a>

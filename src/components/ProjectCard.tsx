@@ -13,7 +13,7 @@ export default function ProjectCard({ project }: Props) {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="group relative text-left rounded overflow-hidden bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-primary transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black/20 dark:hover:shadow-black/50"
+        className="group relative text-left rounded overflow-hidden bg-white dark:bg-gray-900 border-l-4 border-surface-accent dark:border-primary/60 hover:border-l-primary dark:hover:border-l-primary transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 dark:hover:shadow-black/50"
       >
         <div className="w-full h-44 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center relative overflow-hidden">
           <span className="text-6xl font-black text-primary/30 select-none">
@@ -29,10 +29,14 @@ export default function ProjectCard({ project }: Props) {
             {project.description}
           </p>
           <div className="mt-3 flex flex-wrap gap-1.5">
-            {project.tech.map((t) => (
+            {project.tech.map((t, i) => (
               <span
                 key={t}
-                className="px-2 py-0.5 text-xs rounded bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
+                className={`px-2 py-0.5 text-xs rounded ${
+                  i % 2 === 0
+                    ? "bg-primary/10 text-primary-dark"
+                    : "bg-surface-accent/40 text-gray-700 dark:text-gray-300"
+                }`}
               >
                 {t}
               </span>
