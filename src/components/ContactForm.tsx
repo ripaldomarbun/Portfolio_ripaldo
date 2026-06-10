@@ -1,4 +1,6 @@
 import { useState, FormEvent } from "react";
+import ScrollReveal from "./ScrollReveal";
+import SocialLinks from "./SocialLinks";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -53,56 +55,74 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">
-          Nama
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors"
-          placeholder="Nama lengkap"
-        />
+    <section id="contact" className="snap-start min-h-screen flex items-center px-4 relative bg-black">
+      <div className="max-w-xl mx-auto w-full">
+        <ScrollReveal>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white uppercase tracking-wide mb-2">
+            Kontak
+          </h2>
+          <div className="w-24 h-0.5 bg-white/20 rounded mb-4" />
+          <p className="text-gray-400 mb-8">
+            Punya pertanyaan atau tertarik bekerja sama? Kirim pesan!
+          </p>
+        </ScrollReveal>
+        <ScrollReveal>
+          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">
+                Nama
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors"
+                placeholder="Nama lengkap"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors"
+                placeholder="email@contoh.com"
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">
+                Pesan
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                required
+                className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors resize-y"
+                placeholder="Tulis pesan Anda..."
+              />
+            </div>
+            {status === "error" && (
+              <p className="text-gray-400 text-sm">{errorMsg}</p>
+            )}
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="w-full px-6 py-3 rounded border border-white text-white font-semibold text-sm hover:bg-white hover:text-black transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {status === "loading" ? "Mengirim..." : "Kirim Pesan"}
+            </button>
+          </form>
+        </ScrollReveal>
+        <div className="mt-8 flex justify-center">
+          <SocialLinks />
+        </div>
       </div>
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">
-          Email
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors"
-          placeholder="email@contoh.com"
-        />
-      </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">
-          Pesan
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={4}
-          required
-          className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors resize-y"
-          placeholder="Tulis pesan Anda..."
-        />
-      </div>
-      {status === "error" && (
-        <p className="text-gray-400 text-sm">{errorMsg}</p>
-      )}
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="w-full px-6 py-3 rounded border border-white text-white font-semibold text-sm hover:bg-white hover:text-black transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-      >
-        {status === "loading" ? "Mengirim..." : "Kirim Pesan"}
-      </button>
-    </form>
+    </section>
   );
 }

@@ -13,20 +13,23 @@ interface Props {
 
 export default function Navbar({ onAdminClick }: Props) {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => {
+      const currentScrollPos = window.scrollY;
+      setVisible(currentScrollPos < prevScrollPos || currentScrollPos < 60);
+      setPrevScrollPos(currentScrollPos);
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [prevScrollPos]);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/90 backdrop-blur border-b border-white/10"
-          : "bg-black/80 backdrop-blur-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent ${
+        visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-8 flex items-center justify-between h-16">
@@ -34,7 +37,27 @@ export default function Navbar({ onAdminClick }: Props) {
           {getPersonalInfo().name.split(" ")[0]}
         </a>
 
+        <div className="hidden sm:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm text-gray-400 hover:text-white transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all hover:after:w-full"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
         <div className="flex items-center gap-2">
+          {onAdminClick && (
+            <button
+              onClick={onAdminClick}
+              className="text-sm text-gray-400 hover:text-white transition-colors font-medium"
+            >
+              Admin
+            </button>
+          )}
           <button
             className="sm:hidden p-2 text-white"
             onClick={() => setOpen(!open)}
@@ -48,26 +71,6 @@ export default function Navbar({ onAdminClick }: Props) {
               )}
             </svg>
           </button>
-
-          <div className="hidden sm:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-gray-400 hover:text-white transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all hover:after:w-full"
-              >
-                {link.label}
-              </a>
-            ))}
-            {onAdminClick && (
-              <button
-                onClick={onAdminClick}
-                className="text-sm text-gray-400 hover:text-white transition-colors font-medium"
-              >
-                Admin
-              </button>
-            )}
-          </div>
         </div>
       </div>
 

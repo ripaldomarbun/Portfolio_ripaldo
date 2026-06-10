@@ -2,38 +2,35 @@ import { getPersonalInfo } from "../data/store";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-black">
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
-      <div className="relative text-center max-w-3xl z-10">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-wide text-white uppercase leading-none">
+    <section className="relative min-h-screen flex flex-col items-center justify-end px-4 pb-24 overflow-hidden bg-black">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/50 via-black to-black" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-white/5 to-transparent blur-3xl" />
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black to-transparent" />
+      </div>
+
+      <div className="relative z-10 text-center max-w-3xl">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold uppercase tracking-[0.2em] text-white leading-none">
           {getPersonalInfo().name.split(" ")[0]}
         </h1>
-        <p className="mt-4 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light">
           {getPersonalInfo().tagline}
         </p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
-          <span>{getPersonalInfo().location}</span>
-          <span className="hidden sm:inline">|</span>
-          <a href={`mailto:${getPersonalInfo().email}`} className="hover:text-white transition-colors">
-            {getPersonalInfo().email}
-          </a>
-          <span className="hidden sm:inline">|</span>
-          <span>{getPersonalInfo().phone}</span>
-        </div>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="mt-8">
           <a
             href="#portfolio"
-            className="inline-flex items-center justify-center px-8 py-3 border border-white text-white font-semibold text-sm hover:bg-white hover:text-black transition-colors"
+            className="inline-flex items-center justify-center px-8 py-3 border border-white/80 text-white font-semibold text-sm tracking-wide hover:bg-white hover:text-black transition-colors"
           >
             Lihat Portfolio
           </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center px-8 py-3 border border-white text-white font-semibold text-sm hover:bg-white hover:text-black transition-colors"
-          >
-            Hubungi Saya
-          </a>
         </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <span className="text-xs text-gray-500 tracking-widest uppercase">Scroll</span>
+        <svg className="w-4 h-4 text-gray-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
       </div>
     </section>
   );

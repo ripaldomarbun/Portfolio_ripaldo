@@ -5,7 +5,7 @@ const APP_VERSION = "1.0.0";
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-white/10 py-8 px-4 mt-16">
+    <footer className="relative z-10 border-t border-white/10 py-8 px-4">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <p className="text-sm text-gray-500">

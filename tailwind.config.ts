@@ -8,7 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Exo 2", "system-ui", "sans-serif"],
+        sans: ["Inter", "Helvetica Neue", "Arial", "system-ui", "sans-serif"],
       },
     },
   },
