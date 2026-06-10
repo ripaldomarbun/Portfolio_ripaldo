@@ -79,6 +79,7 @@ export default function AdminDashboard({ onBack }: Props) {
               &larr; Portfolio
             </button>
             <h1 className="text-2xl font-bold text-white mt-2">Admin Panel</h1>
+            <p className="text-xs text-[#444]">v1.0.0</p>
           </div>
           <div className="flex gap-3">
             <button
