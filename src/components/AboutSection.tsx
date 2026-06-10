@@ -17,7 +17,7 @@ export default function AboutSection() {
           <div className="w-24 h-0.5 bg-[#00FF41]/30 rounded mb-8" />
         </ScrollReveal>
         <ScrollReveal>
-          <div className="space-y-4 text-gray-400 leading-relaxed whitespace-pre-line text-base sm:text-lg">
+          <div className="space-y-4 text-[#00FF41]/80 leading-relaxed whitespace-pre-line text-base sm:text-lg">
             {info.about}
           </div>
         </ScrollReveal>
@@ -26,7 +26,7 @@ export default function AboutSection() {
             {info.skills.map((skill) => (
               <span
                 key={skill}
-                className="px-3 py-1.5 rounded text-sm font-medium border border-white/10 text-gray-400"
+                className="px-3 py-1.5 rounded text-sm font-medium border border-[#00FF41]/30 text-[#00FF41]/70"
               >
                 {skill}
               </span>

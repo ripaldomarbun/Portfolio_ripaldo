@@ -17,7 +17,7 @@ export default function PortfolioGrid() {
             Portfolio
           </h2>
           <div className="w-24 h-0.5 bg-[#00FF41]/30 rounded mb-4" />
-          <p className="text-gray-500 mb-10 max-w-lg">
+          <p className="text-[#00FF41]/70 mb-10 max-w-lg">
             Beberapa project yang pernah saya kerjakan.
           </p>
         </ScrollReveal>

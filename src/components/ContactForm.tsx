@@ -46,8 +46,8 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded border border-white/10 p-6 text-center">
-        <p className="text-white font-medium text-lg">Pesan terkirim!</p>
-        <p className="text-gray-500 text-sm mt-1">
+        <p className="text-[#00FF41] font-medium text-lg">Pesan terkirim!</p>
+        <p className="text-[#00FF41]/70 text-sm mt-1">
           Terima kasih, saya akan menghubungi Anda segera.
         </p>
       </div>
@@ -66,14 +66,14 @@ export default function ContactForm() {
             Kontak
           </h2>
           <div className="w-24 h-0.5 bg-[#00FF41]/30 rounded mb-4" />
-          <p className="text-gray-400 mb-8">
+          <p className="text-[#00FF41]/80 mb-8">
             Punya pertanyaan atau tertarik bekerja sama? Kirim pesan!
           </p>
         </ScrollReveal>
         <ScrollReveal>
           <form onSubmit={handleSubmit} className="space-y-4" noValidate>
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-[#00FF41] mb-1">
                 Nama
               </label>
               <input
@@ -81,12 +81,12 @@ export default function ContactForm() {
                 id="name"
                 name="name"
                 required
-                className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors"
+                className="w-full px-4 py-2.5 rounded bg-transparent border border-[#00FF41]/20 text-[#00FF41] placeholder-[#00FF41]/40 focus:outline-none focus:border-[#00FF41]/50 transition-colors"
                 placeholder="Nama lengkap"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-[#00FF41] mb-1">
                 Email
               </label>
               <input
@@ -94,12 +94,12 @@ export default function ContactForm() {
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors"
+                className="w-full px-4 py-2.5 rounded bg-transparent border border-[#00FF41]/20 text-[#00FF41] placeholder-[#00FF41]/40 focus:outline-none focus:border-[#00FF41]/50 transition-colors"
                 placeholder="email@contoh.com"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">
+              <label htmlFor="message" className="block text-sm font-medium text-[#00FF41] mb-1">
                 Pesan
               </label>
               <textarea
@@ -107,17 +107,17 @@ export default function ContactForm() {
                 name="message"
                 rows={4}
                 required
-                className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors resize-y"
+                className="w-full px-4 py-2.5 rounded bg-transparent border border-[#00FF41]/20 text-[#00FF41] placeholder-[#00FF41]/40 focus:outline-none focus:border-[#00FF41]/50 transition-colors resize-y"
                 placeholder="Tulis pesan Anda..."
               />
             </div>
             {status === "error" && (
-              <p className="text-gray-400 text-sm">{errorMsg}</p>
+              <p className="text-[#00FF41]/80 text-sm">{errorMsg}</p>
             )}
             <button
               type="submit"
               disabled={status === "loading"}
-              className="w-full px-6 py-3 rounded border border-white text-white font-semibold text-sm hover:bg-white hover:text-black transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+               className="w-full px-6 py-3 rounded border border-[#00FF41] text-[#00FF41] font-semibold text-sm hover:bg-[#00FF41] hover:text-black transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {status === "loading" ? "Mengirim..." : "Kirim Pesan"}
             </button>
