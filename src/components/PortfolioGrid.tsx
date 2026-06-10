@@ -13,10 +13,10 @@ export default function PortfolioGrid() {
       </div>
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         <ScrollReveal>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white uppercase tracking-wide mb-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF41] uppercase tracking-wide mb-2 drop-shadow-[0_0_8px_rgba(0,255,65,0.3)]">
             Portfolio
           </h2>
-          <div className="w-24 h-0.5 bg-white/20 rounded mb-4" />
+          <div className="w-24 h-0.5 bg-[#00FF41]/30 rounded mb-4" />
           <p className="text-gray-500 mb-10 max-w-lg">
             Beberapa project yang pernah saya kerjakan.
           </p>
