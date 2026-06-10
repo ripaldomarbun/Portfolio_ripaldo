@@ -21,16 +21,16 @@ export default function ProjectDetail({ project, onClose }: Props) {
       onClick={onClose}
     >
       <div
-        className="bg-[#1a1a1a] rounded max-w-lg w-full p-6 sm:p-8 border border-[#333]"
+        className="bg-white dark:bg-gray-900 rounded max-w-lg w-full p-6 sm:p-8 border border-gray-300 dark:border-gray-700"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between mb-4">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
             {project.title}
           </h2>
           <button
             onClick={onClose}
-            className="p-1 text-[#b3b3b3] hover:text-white transition-colors"
+            className="p-1 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
             aria-label="Close"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,19 +39,19 @@ export default function ProjectDetail({ project, onClose }: Props) {
           </button>
         </div>
 
-        <div className="w-full h-48 rounded bg-gradient-to-br from-[#E50914]/20 to-[#E50914]/5 mb-4 flex items-center justify-center">
-          <span className="text-5xl font-black text-[#E50914]/30">
+        <div className="w-full h-48 rounded bg-gradient-to-br from-primary/20 to-primary/5 mb-4 flex items-center justify-center">
+          <span className="text-5xl font-black text-primary/30">
             {project.title.charAt(0)}
           </span>
         </div>
 
-        <p className="text-[#b3b3b3] leading-relaxed">{project.description}</p>
+        <p className="text-gray-500 dark:text-gray-400 leading-relaxed">{project.description}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tech.map((t) => (
             <span
               key={t}
-              className="px-2.5 py-1 text-xs font-medium rounded bg-[#333] text-[#b3b3b3]"
+              className="px-2.5 py-1 text-xs font-medium rounded bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
             >
               {t}
             </span>
@@ -64,7 +64,7 @@ export default function ProjectDetail({ project, onClose }: Props) {
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center px-4 py-2.5 rounded bg-[#E50914] text-white font-semibold text-sm hover:bg-[#f40612] transition-colors"
+              className="flex-1 text-center px-4 py-2.5 rounded bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors"
             >
               Demo
             </a>
@@ -74,7 +74,7 @@ export default function ProjectDetail({ project, onClose }: Props) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center px-4 py-2.5 rounded bg-[#333] text-white font-semibold text-sm hover:bg-[#444] transition-colors"
+              className="flex-1 text-center px-4 py-2.5 rounded bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
             >
               GitHub
             </a>

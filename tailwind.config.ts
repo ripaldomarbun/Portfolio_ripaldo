@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./index.html",
@@ -8,19 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        netflix: {
-          bg: "#141414",
-          surface: "#1a1a1a",
-          "surface-hover": "#2a2a2a",
-          red: "#E50914",
-          "red-hover": "#f40612",
-          text: "#ffffff",
-          muted: "#b3b3b3",
-          border: "#333333",
+        primary: {
+          DEFAULT: "#306D29",
+          dark: "#0D530E",
+          light: "#4A8E42",
+        },
+        surface: {
+          DEFAULT: "#FBF5DD",
+          accent: "#E7E1B1",
         },
       },
       fontFamily: {
-        sans: ["Roboto Mono", "monospace"],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
     },
   },

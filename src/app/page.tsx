@@ -18,10 +18,10 @@ export default function Home() {
 
         <section id="contact" className="py-20 sm:py-28 px-4">
           <div className="max-w-xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Kontak
             </h2>
-            <p className="text-neutral-500 mb-8">
+            <p className="text-gray-500 dark:text-gray-400 mb-8">
               Punya pertanyaan atau tertarik bekerja sama? Kirim pesan!
             </p>
             <ContactForm />

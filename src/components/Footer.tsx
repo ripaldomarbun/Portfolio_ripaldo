@@ -5,13 +5,13 @@ const APP_VERSION = "1.0.0";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#222] py-8 px-4 mt-16">
+    <footer className="border-t border-gray-200 dark:border-gray-800 py-8 px-4 mt-16">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <p className="text-sm text-[#666]">
+          <p className="text-sm text-gray-400 dark:text-gray-500">
             &copy; {new Date().getFullYear()} {getPersonalInfo().name}. All rights reserved.
           </p>
-          <p className="text-xs text-[#444] mt-1">v{APP_VERSION}</p>
+          <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">v{APP_VERSION}</p>
         </div>
         <SocialLinks />
       </div>

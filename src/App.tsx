@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AuthProvider } from "./context/AuthContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
@@ -15,13 +16,15 @@ export default function App() {
   if (view === "admin") {
     return (
       <AuthProvider>
-        <AdminPanel onBack={() => setView("portfolio")} />
+        <ThemeProvider>
+          <AdminPanel onBack={() => setView("portfolio")} />
+        </ThemeProvider>
       </AuthProvider>
     );
   }
 
   return (
-    <>
+    <ThemeProvider>
       <Navbar onAdminClick={() => setView("admin")} />
       <main>
         <HeroSection />
@@ -30,10 +33,10 @@ export default function App() {
 
         <section id="contact" className="py-20 sm:py-28 px-4">
           <div className="max-w-xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Kontak
             </h2>
-            <p className="text-[#b3b3b3] mb-8">
+            <p className="text-gray-500 dark:text-gray-400 mb-8">
               Punya pertanyaan atau tertarik bekerja sama? Kirim pesan!
             </p>
             <ContactForm />
@@ -44,6 +47,6 @@ export default function App() {
         </section>
       </main>
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }

@@ -8,7 +8,7 @@ export default function SocialLinks() {
         href={info.social.github}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#666] hover:text-white transition-colors"
+        className="text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
         aria-label="GitHub"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -19,7 +19,7 @@ export default function SocialLinks() {
         href={info.social.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#666] hover:text-white transition-colors"
+        className="text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
         aria-label="LinkedIn"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -28,7 +28,7 @@ export default function SocialLinks() {
       </a>
       <a
         href={`mailto:${info.email}`}
-        className="text-[#666] hover:text-white transition-colors"
+        className="text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
         aria-label="Email"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

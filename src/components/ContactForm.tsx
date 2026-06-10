@@ -55,7 +55,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-[#b3b3b3] mb-1">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
           Nama
         </label>
         <input
@@ -63,12 +63,12 @@ export default function ContactForm() {
           id="name"
           name="name"
           required
-          className="w-full px-4 py-2.5 rounded bg-[#1a1a1a] border border-[#333] text-white placeholder-[#666] focus:outline-none focus:ring-1 focus:ring-[#E50914] focus:border-[#E50914] transition-shadow"
+          className="w-full px-4 py-2.5 rounded bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-shadow"
           placeholder="Nama lengkap"
         />
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-[#b3b3b3] mb-1">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
           Email
         </label>
         <input
@@ -76,12 +76,12 @@ export default function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full px-4 py-2.5 rounded bg-[#1a1a1a] border border-[#333] text-white placeholder-[#666] focus:outline-none focus:ring-1 focus:ring-[#E50914] focus:border-[#E50914] transition-shadow"
+          className="w-full px-4 py-2.5 rounded bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-shadow"
           placeholder="email@contoh.com"
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-[#b3b3b3] mb-1">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
           Pesan
         </label>
         <textarea
@@ -89,17 +89,17 @@ export default function ContactForm() {
           name="message"
           rows={4}
           required
-          className="w-full px-4 py-2.5 rounded bg-[#1a1a1a] border border-[#333] text-white placeholder-[#666] focus:outline-none focus:ring-1 focus:ring-[#E50914] focus:border-[#E50914] transition-shadow resize-y"
+          className="w-full px-4 py-2.5 rounded bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-shadow resize-y"
           placeholder="Tulis pesan Anda..."
         />
       </div>
       {status === "error" && (
-        <p className="text-[#E50914] text-sm">{errorMsg}</p>
+        <p className="text-primary text-sm">{errorMsg}</p>
       )}
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full px-6 py-3 rounded bg-[#E50914] text-white font-semibold text-sm hover:bg-[#f40612] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full px-6 py-3 rounded bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "loading" ? "Mengirim..." : "Kirim Pesan"}
       </button>
