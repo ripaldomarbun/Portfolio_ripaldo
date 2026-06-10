@@ -20,7 +20,7 @@ export default function App() {
           <AdminPanel onBack={() => setView("portfolio")} />
         </AuthProvider>
       ) : (
-        <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+        <div className="h-screen overflow-y-scroll snap-y snap-proximity scroll-smooth">
           <Navbar onAdminClick={() => setView("admin")} />
           <main className="relative z-10">
             <HeroSection />
