@@ -21,7 +21,7 @@ export default function AdminLogin({ onBack }: Props) {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-4">
+    <div className="relative z-10 min-h-screen bg-black flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <button
           onClick={onBack}

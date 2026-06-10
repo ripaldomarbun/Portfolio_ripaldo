@@ -68,7 +68,7 @@ export default function AdminDashboard({ onBack }: Props) {
   ];
 
   return (
-    <div className="min-h-screen bg-black pt-20 px-4 pb-12">
+    <div className="relative z-10 min-h-screen bg-black pt-20 px-4 pb-12">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <div>
