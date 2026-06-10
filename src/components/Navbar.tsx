@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { getPersonalInfo } from "../data/store";
-import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "Tentang", href: "#about" },
@@ -26,20 +25,18 @@ export default function Navbar({ onAdminClick }: Props) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-surface dark:bg-gray-950 shadow-sm"
-          : "bg-surface/80 dark:bg-gradient-to-b dark:from-black/80 dark:to-transparent backdrop-blur-sm"
+          ? "bg-black/90 backdrop-blur border-b border-white/10"
+          : "bg-black/80 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-8 flex items-center justify-between h-16">
-        <a href="#" className="text-2xl font-bold text-primary tracking-tight">
+        <a href="#" className="text-2xl font-bold text-white uppercase tracking-wide">
           {getPersonalInfo().name.split(" ")[0]}
         </a>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
-
           <button
-            className="sm:hidden p-2 text-gray-900 dark:text-white"
+            className="sm:hidden p-2 text-white"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -57,7 +54,7 @@ export default function Navbar({ onAdminClick }: Props) {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
+                className="text-sm text-gray-400 hover:text-white transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -65,7 +62,7 @@ export default function Navbar({ onAdminClick }: Props) {
             {onAdminClick && (
               <button
                 onClick={onAdminClick}
-                className="text-sm text-primary-dark dark:text-primary-light hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                className="text-sm text-gray-400 hover:text-white transition-colors font-medium"
               >
                 Admin
               </button>
@@ -75,13 +72,13 @@ export default function Navbar({ onAdminClick }: Props) {
       </div>
 
       {open && (
-        <div className="sm:hidden bg-surface dark:bg-gray-950 border-t border-gray-300 dark:border-gray-700 px-4 py-4 space-y-3">
+        <div className="sm:hidden bg-black border-t border-white/10 px-4 py-4 space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+              className="block text-sm text-gray-400 hover:text-white transition-colors"
             >
               {link.label}
             </a>
@@ -89,7 +86,7 @@ export default function Navbar({ onAdminClick }: Props) {
           {onAdminClick && (
             <button
               onClick={() => { setOpen(false); onAdminClick(); }}
-              className="block text-sm text-primary-dark dark:text-primary-light hover:text-primary dark:hover:text-primary transition-colors font-medium"
+              className="block text-sm text-gray-400 hover:text-white transition-colors font-medium"
             >
               Admin
             </button>

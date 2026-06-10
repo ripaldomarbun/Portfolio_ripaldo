@@ -5,15 +5,13 @@ export default function PortfolioGrid() {
   const projects = getProjects();
 
   return (
-    <section id="portfolio" className="py-20 sm:py-28 px-4 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-surface-accent/20 to-primary/[0.02] dark:from-transparent dark:to-transparent pointer-events-none" />
+    <section id="portfolio" className="py-24 sm:py-32 px-4 relative bg-black">
       <div className="max-w-6xl mx-auto relative">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white uppercase tracking-wide mb-2">
           Portfolio
         </h2>
-        <div className="w-12 h-1 bg-primary rounded mb-1" />
-        <div className="w-24 h-0.5 bg-surface-accent rounded mb-4" />
-        <p className="text-gray-600 dark:text-gray-400 mb-10 max-w-lg">
+        <div className="w-24 h-0.5 bg-white/20 rounded mb-4" />
+        <p className="text-gray-500 mb-10 max-w-lg">
           Beberapa project yang pernah saya kerjakan.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

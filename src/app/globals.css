@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,36 +9,22 @@ html {
 }
 
 body {
-  background-color: #FBF5DD;
-  color: #111827;
+  background-color: #000;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.dark body {
-  background-color: #030712;
-  color: #f3f4f6;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FBF5DD;
-}
-.dark ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #111;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D1D5DB;
+  background: #333;
   border-radius: 4px;
 }
-.dark ::-webkit-scrollbar-thumb {
-  background: #374151;
-}
 ::-webkit-scrollbar-thumb:hover {
-  background: #9CA3AF;
-}
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #6B7280;
+  background: #555;
 }

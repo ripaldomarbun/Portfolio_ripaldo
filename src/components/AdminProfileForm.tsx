@@ -35,101 +35,101 @@ export default function AdminProfileForm({ info, onSave }: Props) {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Nama</label>
+          <label className="block text-sm font-medium text-gray-400 mb-1">Nama</label>
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary"
+            className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Location</label>
+          <label className="block text-sm font-medium text-gray-400 mb-1">Location</label>
           <input
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             required
-            className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary"
+            className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Tagline</label>
+        <label className="block text-sm font-medium text-gray-400 mb-1">Tagline</label>
         <input
           value={tagline}
           onChange={(e) => setTagline(e.target.value)}
           required
-          className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary"
+          className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
         />
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Email</label>
+          <label className="block text-sm font-medium text-gray-400 mb-1">Email</label>
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
             type="email"
-            className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary"
+            className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Phone</label>
+          <label className="block text-sm font-medium text-gray-400 mb-1">Phone</label>
           <input
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             required
-            className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary"
+            className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Tentang Saya</label>
+        <label className="block text-sm font-medium text-gray-400 mb-1">Tentang Saya</label>
         <textarea
           value={about}
           onChange={(e) => setAbout(e.target.value)}
           required
           rows={10}
-          className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary resize-y font-mono text-sm"
+          className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors resize-y font-mono text-sm"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-          Skills <span className="text-gray-400 dark:text-gray-500">(pisahkan dengan koma)</span>
+        <label className="block text-sm font-medium text-gray-400 mb-1">
+          Skills <span className="text-gray-500">(pisahkan dengan koma)</span>
         </label>
         <input
           value={skillsStr}
           onChange={(e) => setSkillsStr(e.target.value)}
           required
-          className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary"
+          className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
         />
       </div>
 
       <fieldset>
-        <legend className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">Social Media</legend>
+        <legend className="text-sm font-medium text-gray-400 mb-2">Social Media</legend>
         <div className="grid sm:grid-cols-2 gap-4">
           <input
             value={github}
             onChange={(e) => setGithub(e.target.value)}
             placeholder="https://github.com/username"
-            className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary"
+            className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
           />
           <input
             value={linkedin}
             onChange={(e) => setLinkedin(e.target.value)}
             placeholder="https://linkedin.com/in/username"
-            className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary"
+            className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
           />
         </div>
       </fieldset>
 
       <button
         type="submit"
-        className="px-6 py-2.5 rounded bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors"
+        className="px-6 py-2.5 rounded border border-white text-white font-semibold text-sm hover:bg-white hover:text-black transition-colors"
       >
         Simpan Profile
       </button>

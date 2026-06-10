@@ -28,67 +28,67 @@ export default function ProjectForm({ initial, onSave, onCancel }: Props) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Judul Project</label>
+        <label className="block text-sm font-medium text-gray-400 mb-1">Judul Project</label>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary focus:border-primary"
+          className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Deskripsi</label>
+        <label className="block text-sm font-medium text-gray-400 mb-1">Deskripsi</label>
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
           rows={3}
-          className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary focus:border-primary resize-y"
+          className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors resize-y"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-          Tech Stack <span className="text-gray-400 dark:text-gray-500">(pisahkan dengan koma)</span>
+        <label className="block text-sm font-medium text-gray-400 mb-1">
+          Tech Stack <span className="text-gray-500">(pisahkan dengan koma)</span>
         </label>
         <input
           value={techStr}
           onChange={(e) => setTechStr(e.target.value)}
           required
           placeholder="React, Node.js, Tailwind"
-          className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary focus:border-primary"
+          className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
         />
       </div>
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Demo URL</label>
+          <label className="block text-sm font-medium text-gray-400 mb-1">Demo URL</label>
           <input
             value={demoUrl}
             onChange={(e) => setDemoUrl(e.target.value)}
             placeholder="https://..."
-            className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary focus:border-primary"
+            className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">GitHub URL</label>
+          <label className="block text-sm font-medium text-gray-400 mb-1">GitHub URL</label>
           <input
             value={githubUrl}
             onChange={(e) => setGithubUrl(e.target.value)}
             placeholder="https://..."
-            className="w-full px-4 py-2 rounded bg-surface dark:bg-gray-950 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-1 focus:ring-primary focus:border-primary"
+            className="w-full px-4 py-2 rounded bg-transparent border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors"
           />
         </div>
       </div>
       <div className="flex gap-3 pt-2">
         <button
           type="submit"
-          className="px-6 py-2 rounded bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors"
+          className="px-6 py-2 rounded border border-white text-white font-semibold text-sm hover:bg-white hover:text-black transition-colors"
         >
           {initial ? "Simpan" : "Tambah"}
         </button>
         <button
           type="button"
           onClick={onCancel}
-          className="px-6 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+          className="px-6 py-2 rounded border border-white/10 text-gray-400 font-semibold text-sm hover:text-white transition-colors"
         >
           Batal
         </button>

@@ -43,9 +43,9 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded border border-green-800 bg-green-900/30 p-6 text-center">
-        <p className="text-green-400 font-medium text-lg">Pesan terkirim!</p>
-        <p className="text-green-500/80 text-sm mt-1">
+      <div className="rounded border border-white/10 p-6 text-center">
+        <p className="text-white font-medium text-lg">Pesan terkirim!</p>
+        <p className="text-gray-500 text-sm mt-1">
           Terima kasih, saya akan menghubungi Anda segera.
         </p>
       </div>
@@ -54,13 +54,8 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-      <div className="mb-6 p-4 rounded bg-primary/[0.03] border border-primary/10 dark:border-primary/20">
-        <p className="text-sm text-primary-dark dark:text-primary-light/80">
-          Isi form di bawah untuk menghubungi saya.
-        </p>
-      </div>
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-primary-dark dark:text-primary-light mb-1">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">
           Nama
         </label>
         <input
@@ -68,12 +63,12 @@ export default function ContactForm() {
           id="name"
           name="name"
           required
-          className="w-full px-4 py-2.5 rounded bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-shadow"
+          className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors"
           placeholder="Nama lengkap"
         />
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-primary-dark dark:text-primary-light mb-1">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">
           Email
         </label>
         <input
@@ -81,12 +76,12 @@ export default function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full px-4 py-2.5 rounded bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-shadow"
+          className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors"
           placeholder="email@contoh.com"
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-primary-dark dark:text-primary-light mb-1">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">
           Pesan
         </label>
         <textarea
@@ -94,17 +89,17 @@ export default function ContactForm() {
           name="message"
           rows={4}
           required
-          className="w-full px-4 py-2.5 rounded bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-shadow resize-y"
+          className="w-full px-4 py-2.5 rounded bg-transparent border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-white/30 transition-colors resize-y"
           placeholder="Tulis pesan Anda..."
         />
       </div>
       {status === "error" && (
-        <p className="text-primary-dark dark:text-primary-light text-sm">{errorMsg}</p>
+        <p className="text-gray-400 text-sm">{errorMsg}</p>
       )}
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full px-6 py-3 rounded bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full px-6 py-3 rounded border border-white text-white font-semibold text-sm hover:bg-white hover:text-black transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "loading" ? "Mengirim..." : "Kirim Pesan"}
       </button>
