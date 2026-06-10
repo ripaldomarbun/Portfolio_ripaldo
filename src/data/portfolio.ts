@@ -11,11 +11,12 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Antrian Rutan",
+    title: "Rutan Kelas IIA Batam",
     description:
-      "Sistem antrian digital terintegrasi untuk mengoptimalkan alur pelayanan publik di Rumah Tahanan Negara Kelas IIA Batam. Tersedia di antrian.rutanbatam.id.",
-    tech: ["Web Development", "Database", "UI/UX", "Process Automation"],
+      "Sistem antrian digital terintegrasi (antrian.rutanbatam.id) dan pengelolaan website institusi resmi (rutanbatam.id) untuk Rumah Tahanan Negara Kelas IIA Batam. Mengoptimalkan alur pelayanan publik dan penyampaian informasi.",
+    tech: ["Web Development", "Database", "UI/UX", "CMS", "PHP"],
     demoUrl: "https://antrian.rutanbatam.id",
+    githubUrl: "https://github.com/ripaldomarbun/rutan-kelas-iia-batam",
   },
   {
     id: "2",
@@ -26,14 +27,6 @@ export const projects: Project[] = [
   },
   {
     id: "3",
-    title: "Rutan Batam Website",
-    description:
-      "Pengelolaan website institusi resmi rutanbatam.id, memastikan penyampaian informasi tepat waktu dan komunikasi yang lancar dengan stakeholder eksternal.",
-    tech: ["Web Development", "CMS", "Public Relations", "Content Management"],
-    demoUrl: "https://rutanbatam.id",
-  },
-  {
-    id: "4",
     title: "Dimsum App",
     description:
       "Restaurant POS System — Dimsum Mentai. Sistem point of sale untuk restoran dimsum mentai.",
@@ -41,7 +34,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ripaldomarbun/dimsum-app",
   },
   {
-    id: "5",
+    id: "4",
     title: "Keuangan Grabike",
     description:
       "Sistem manajemen keuangan untuk aplikasi Grabike.",
@@ -49,15 +42,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ripaldomarbun/keuangan-grabike",
   },
   {
-    id: "6",
-    title: "Rutan Kelas IIA Batam",
-    description:
-      "Sistem informasi untuk Rumah Tahanan Negara Kelas IIA Batam — pengelolaan data dan layanan.",
-    tech: ["PHP", "Web Development", "Database Management"],
-    githubUrl: "https://github.com/ripaldomarbun/rutan-kelas-iia-batam",
-  },
-  {
-    id: "7",
+    id: "5",
     title: "Todo List PHP",
     description:
       "Aplikasi Todo List sederhana menggunakan PHP untuk manajemen tugas harian.",
