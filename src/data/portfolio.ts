@@ -11,11 +11,18 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
+    title: "Antrian Rutan",
+    description:
+      "Sistem antrian digital terintegrasi untuk mengoptimalkan alur pelayanan publik di Rumah Tahanan Negara Kelas IIA Batam. Tersedia di antrian.rutanbatam.id.",
+    tech: ["Web Development", "Database", "UI/UX", "Process Automation"],
+    demoUrl: "https://antrian.rutanbatam.id",
+  },
+  {
+    id: "6",
     title: "Rutan Kelas IIA Batam",
     description:
-      "Sistem antrian digital terintegrasi (antrian.rutanbatam.id) dan pengelolaan website institusi resmi (rutanbatam.id) untuk Rumah Tahanan Negara Kelas IIA Batam. Mengoptimalkan alur pelayanan publik dan penyampaian informasi.",
-    tech: ["Web Development", "Database", "UI/UX", "CMS", "PHP"],
-    demoUrl: "https://antrian.rutanbatam.id",
+      "Pengelolaan website institusi resmi rutanbatam.id dan sistem informasi untuk Rumah Tahanan Negara Kelas IIA Batam.",
+    tech: ["PHP", "Web Development", "CMS", "Public Relations"],
     githubUrl: "https://github.com/ripaldomarbun/rutan-kelas-iia-batam",
   },
   {
