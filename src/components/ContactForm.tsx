@@ -60,7 +60,7 @@ export default function ContactForm() {
         <img src="/images/contact-bg.jpg" alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
       </div>
-      <div className="relative z-10 max-w-xl mx-auto w-full">
+      <div className="relative z-10 max-w-2xl mx-auto w-full">
         <ScrollReveal>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF41] uppercase tracking-wide mb-2 drop-shadow-[0_0_8px_rgba(0,255,65,0.3)]">
             Kontak

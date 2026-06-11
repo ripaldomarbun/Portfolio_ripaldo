@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 const ADMIN_PASSWORD_KEY = "portfolio_admin_pass";
+const AUTH_SESSION_KEY = "portfolio_auth";
 const DEFAULT_PASSWORD = "admin123";
 
 interface AuthContextType {
@@ -12,7 +13,9 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return sessionStorage.getItem(AUTH_SESSION_KEY) === "true";
+  });
 
   useEffect(() => {
     const stored = localStorage.getItem(ADMIN_PASSWORD_KEY);
@@ -25,12 +28,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const stored = localStorage.getItem(ADMIN_PASSWORD_KEY) || DEFAULT_PASSWORD;
     if (password === stored) {
       setIsAuthenticated(true);
+      sessionStorage.setItem(AUTH_SESSION_KEY, "true");
       return true;
     }
     return false;
   };
 
-  const logout = () => setIsAuthenticated(false);
+  const logout = () => {
+    setIsAuthenticated(false);
+    sessionStorage.removeItem(AUTH_SESSION_KEY);
+  };
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>

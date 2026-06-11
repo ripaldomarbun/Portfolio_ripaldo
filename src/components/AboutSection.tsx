@@ -9,7 +9,7 @@ export default function AboutSection() {
         <img src="/images/about-bg.jpg" alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
       </div>
-      <div className="relative z-10 max-w-4xl mx-auto w-full">
+      <div className="relative z-10 max-w-5xl mx-auto w-full">
         <ScrollReveal>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#00FF41] uppercase tracking-wide mb-2 drop-shadow-[0_0_8px_rgba(0,255,65,0.3)]">
             Tentang Saya
@@ -26,7 +26,7 @@ export default function AboutSection() {
             {info.skills.map((skill) => (
               <span
                 key={skill}
-                className="px-3 py-1.5 rounded text-sm font-medium border border-[#00FF41]/30 text-[#00FF41]/70"
+                className="px-2.5 py-1 rounded text-xs font-medium border border-[#00FF41]/30 text-[#00FF41]/70"
               >
                 {skill}
               </span>

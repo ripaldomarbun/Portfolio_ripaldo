@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import { getProjects, addProject, updateProject, deleteProject, resetProjects, getPersonalInfo, savePersonalInfo, resetPersonalInfo } from "../data/store";
+import { getProjects, addProject, updateProject, deleteProject, resetProjects, getPersonalInfo, savePersonalInfo, resetPersonalInfo, validateProject } from "../data/store";
 import { Project, PersonalInfo } from "../data/portfolio";
 import ProjectForm from "./ProjectForm";
 import AdminProfileForm from "./AdminProfileForm";
@@ -20,10 +20,14 @@ export default function AdminDashboard({ onBack }: Props) {
   const [showReset, setShowReset] = useState(false);
   const [profileInfo, setProfileInfo] = useState<PersonalInfo>(getPersonalInfo);
   const [profileSaved, setProfileSaved] = useState(false);
+  const [validationError, setValidationError] = useState<string | null>(null);
 
   const refresh = () => setProjects([...getProjects()]);
 
   const handleAdd = (data: Omit<Project, "id">) => {
+    const err = validateProject(data);
+    if (err) { setValidationError(err); return; }
+    setValidationError(null);
     addProject(data);
     setAdding(false);
     refresh();
@@ -31,6 +35,9 @@ export default function AdminDashboard({ onBack }: Props) {
 
   const handleUpdate = (data: Omit<Project, "id">) => {
     if (!editing) return;
+    const err = validateProject(data);
+    if (err) { setValidationError(err); return; }
+    setValidationError(null);
     updateProject(editing.id, data);
     setEditing(null);
     refresh();
@@ -158,6 +165,10 @@ export default function AdminDashboard({ onBack }: Props) {
                 + Tambah Project
               </button>
             </div>
+
+            {validationError && (
+              <p className="text-red-400 text-sm mb-4">{validationError}</p>
+            )}
 
             {adding && (
               <div className="mb-6 p-6 rounded border border-white/10 bg-zinc-900/50">

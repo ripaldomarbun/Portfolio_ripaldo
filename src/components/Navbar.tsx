@@ -13,22 +13,26 @@ interface Props {
 
 export default function Navbar({ onAdminClick }: Props) {
   const [open, setOpen] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    let prevScrollPos = 0;
     const onScroll = () => {
       const currentScrollPos = window.scrollY;
       setVisible(currentScrollPos < prevScrollPos || currentScrollPos < 60);
-      setPrevScrollPos(currentScrollPos);
+      setScrolled(currentScrollPos > 50);
+      prevScrollPos = currentScrollPos;
     };
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [prevScrollPos]);
+  }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-black/80 backdrop-blur-sm border-b border-white/10" : "bg-transparent"
+      } ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >

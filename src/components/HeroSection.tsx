@@ -22,7 +22,7 @@ export default function HeroSection() {
         <div className="mt-8">
           <a
             href="#portfolio"
-            className="inline-flex items-center justify-center px-8 py-3 border border-white/80 text-white font-semibold text-sm tracking-wide hover:bg-white hover:text-black transition-colors"
+            className="inline-flex items-center justify-center px-8 py-3 border border-[#00FF41] text-[#00FF41] font-semibold text-sm tracking-wide hover:bg-[#00FF41] hover:text-black transition-colors"
           >
             Lihat Portfolio
           </a>

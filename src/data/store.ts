@@ -17,10 +17,8 @@ export function saveProjects(projects: Project[]) {
   localStorage.setItem(PROJECTS_KEY, JSON.stringify(projects));
 }
 
-let nextId = Date.now();
-
 export function addProject(data: Omit<Project, "id">): Project {
-  const project: Project = { id: String(nextId++), ...data };
+  const project: Project = { id: crypto.randomUUID(), ...data };
   const projects = getProjects();
   projects.push(project);
   saveProjects(projects);
@@ -56,6 +54,13 @@ export function getPersonalInfo(): PersonalInfo {
 
 export function savePersonalInfo(info: PersonalInfo) {
   localStorage.setItem(INFO_KEY, JSON.stringify(info));
+}
+
+export function validateProject(data: Partial<Omit<Project, "id">>): string | null {
+  if (!data.title?.trim()) return "Judul project wajib diisi";
+  if (!data.description?.trim()) return "Deskripsi project wajib diisi";
+  if (!data.tech?.length) return "Minimal satu tech stack wajib diisi";
+  return null;
 }
 
 export function updatePersonalInfo(data: Partial<PersonalInfo>) {

@@ -31,7 +31,7 @@ export default function ProjectCard({ project }: Props) {
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="px-2 py-0.5 text-xs rounded border border-[#00FF41]/20 text-[#00FF41]/60"
+                className="px-2.5 py-1 text-xs rounded border border-[#00FF41]/20 text-[#00FF41]/60"
               >
                 {t}
               </span>
