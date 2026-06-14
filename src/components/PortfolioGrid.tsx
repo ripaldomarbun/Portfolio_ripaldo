@@ -8,7 +8,7 @@ export default function PortfolioGrid() {
   return (
     <section id="portfolio" className="snap-start min-h-screen flex items-center px-4 relative bg-black overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src="/images/portfolio-bg.jpg" alt="" className="w-full h-full object-cover" />
+        <img src={import.meta.env.BASE_URL + "images/portfolio-bg.jpg"} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
       </div>
       <div className="relative z-10 max-w-5xl mx-auto w-full">

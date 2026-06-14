@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col items-center justify-end px-4 pb-24 overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hero-bg.jpg"
+          src={import.meta.env.BASE_URL + "images/hero-bg.jpg"}
           alt=""
           className="w-full h-full object-cover"
         />
